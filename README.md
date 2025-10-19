@@ -51,4 +51,38 @@ It allows managing products, orders, and promotions through a simple, modern, an
 | UI Components | HeadlessUI, MUI |
 | Charts | Recharts |
 
+---
 
+## 🚀 Getting Started
+Follow these steps to set up and run the project locally:
+
+### 1️⃣ Clone the repository
+
+Clone this repository to your local machine:
+
+```bash
+  git clone https://link-to-project
+```
+
+Then navigate into the project folder:
+
+```bash
+cd dashboard
+```
+### 2️⃣ Install dependencies
+
+Install all required packages using npm:
+
+```bash
+  npm install
+```
+
+### 3️⃣ Start the development server
+
+```bash
+  npm run dev
+```
+
+Once the server starts, open the app in your browser at:
+
+👉 http://localhost:5173
