@@ -1,69 +1,87 @@
-# React + TypeScript + Vite
+🧭 Inventory Management Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A lightweight inventory and sales management dashboard built with React, TypeScript, and Tailwind CSS.
+It provides a clean, responsive interface for managing products, orders, and promotions with full CRUD functionality and smart contextual behavior — all running completely on the client using localStorage (no backend needed).
 
-Currently, two official plugins are available:
+✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+📦 Product Management – Add, edit, and deactivate products
 
-## Expanding the ESLint configuration
+Prevents negative stock
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Inactive products stay stored but hidden from new orders
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+🧾 Orders Management – Create and track customer orders
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+Automatically decreases stock levels
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Prevents empty orders
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+🎟️ Promos Management – Manage discount codes
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Validates start and end dates
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Supports fixed and percentage-based discounts
+
+📊 Dashboard KPIs – Displays key metrics:
+
+Total revenue, average order value (AOV), monthly order count
+
+🔔 Notifications System –
+
+Alerts for low or out-of-stock products (colored indicators)
+
+🌗 Dark Mode Support
+
+💾 LocalStorage Persistence – Data saved automatically
+
+🧩 Reusable Components – Form fields, buttons, toolbars, tables
+
+⚛️ React Hooks Used:
+useState, useEffect, useContext, useReducer, useMemo, useCallback, useRef
+
+🛠️ Tech Stack
+Category	Technology
+Frontend Framework	React (Vite)
+Language	TypeScript
+Styling	Tailwind CSS
+State Management	React Context API
+Icons & Components	HeadlessUI, MUI Icons
+Charts	Recharts
+🚀 Getting Started
+1️⃣ Clone the repo
+git clone https://github.com/YOUR_USERNAME/inventory-dashboard.git
+cd inventory-dashboard
+
+2️⃣ Install dependencies
+npm install
+
+3️⃣ Run locally
+npm run dev
+
+
+Then open http://localhost:5173
+ in your browser.
+
+🧩 Folder Structure
+src/
+ ├── components/       # Reusable UI components (FormField, Buttons, etc.)
+ ├── contexts/         # React Contexts for data & navigation
+ ├── pages/            # Products, Orders, Promos, Dashboard
+ ├── hooks/            # Custom hooks
+ ├── assets/           # SVG icons & static files
+ └── main.tsx          # App entry point
+
+⚙️ Validation Rules
+
+Products cannot have negative stock.
+
+Promo end date must be after start date.
+
+Each order must include at least one product.
+
+Adding an order reduces product stock automatically.
+
+Products cannot be deleted — only deactivated.
+
+Only active products appear in order dropdowns.
