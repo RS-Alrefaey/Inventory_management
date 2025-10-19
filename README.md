@@ -1,87 +1,54 @@
-🧭 Inventory Management Dashboard
+# 🧭 Inventory Management Dashboard
 
-A lightweight inventory and sales management dashboard built with React, TypeScript, and Tailwind CSS.
-It provides a clean, responsive interface for managing products, orders, and promotions with full CRUD functionality and smart contextual behavior — all running completely on the client using localStorage (no backend needed).
+A lightweight **Inventory and Sales Management Dashboard** built with **React**, **TypeScript**, and **Tailwind CSS**.  
+It allows managing products, orders, and promotions through a simple, modern, and responsive interface — all stored locally with no backend required.
 
-✨ Features
+---
 
-📦 Product Management – Add, edit, and deactivate products
+## ✨ Features
 
-Prevents negative stock
+- 📦 **Product Management**
+  - Add, edit, and deactivate products
+  - Prevents negative stock values
+  - Inactive products stay saved but hidden from new orders
 
-Inactive products stay stored but hidden from new orders
+- 🧾 **Orders Management**
+  - Create and edit customer orders
+  - Automatically decrements stock for ordered items
+  - Prevents submitting empty orders
 
-🧾 Orders Management – Create and track customer orders
+- 🎟️ **Promo Management**
+  - Add and edit discount codes
+  - Validates start and end dates
+  - Supports both fixed and percentage-based discounts
 
-Automatically decreases stock levels
+- 📊 **Dashboard KPIs**
+  - Total revenue
+  - Average order value (AOV)
+  - Monthly order count
 
-Prevents empty orders
+- 🔔 **Notifications**
+  - Highlights low-stock and out-of-stock products
 
-🎟️ Promos Management – Manage discount codes
+- 🌗 **Dark Mode Support**
 
-Validates start and end dates
+- 💾 **LocalStorage Persistence**
+  - All data (products, orders, promos) is saved locally in the browser
 
-Supports fixed and percentage-based discounts
+- 🧩 **Reusable Components**
+  - Form fields, buttons, toolbars, and table components for cleaner structure
 
-📊 Dashboard KPIs – Displays key metrics:
+---
 
-Total revenue, average order value (AOV), monthly order count
+## 🛠️ Tech Stack
 
-🔔 Notifications System –
-
-Alerts for low or out-of-stock products (colored indicators)
-
-🌗 Dark Mode Support
-
-💾 LocalStorage Persistence – Data saved automatically
-
-🧩 Reusable Components – Form fields, buttons, toolbars, tables
-
-⚛️ React Hooks Used:
-useState, useEffect, useContext, useReducer, useMemo, useCallback, useRef
-
-🛠️ Tech Stack
-Category	Technology
-Frontend Framework	React (Vite)
-Language	TypeScript
-Styling	Tailwind CSS
-State Management	React Context API
-Icons & Components	HeadlessUI, MUI Icons
-Charts	Recharts
-🚀 Getting Started
-1️⃣ Clone the repo
-git clone https://github.com/YOUR_USERNAME/inventory-dashboard.git
-cd inventory-dashboard
-
-2️⃣ Install dependencies
-npm install
-
-3️⃣ Run locally
-npm run dev
+| Category | Technology |
+|-----------|-------------|
+| Framework | React (Vite) |
+| Language | TypeScript |
+| Styling | Tailwind CSS |
+| State Management | React Context API |
+| UI Components | HeadlessUI, MUI |
+| Charts | Recharts |
 
 
-Then open http://localhost:5173
- in your browser.
-
-🧩 Folder Structure
-src/
- ├── components/       # Reusable UI components (FormField, Buttons, etc.)
- ├── contexts/         # React Contexts for data & navigation
- ├── pages/            # Products, Orders, Promos, Dashboard
- ├── hooks/            # Custom hooks
- ├── assets/           # SVG icons & static files
- └── main.tsx          # App entry point
-
-⚙️ Validation Rules
-
-Products cannot have negative stock.
-
-Promo end date must be after start date.
-
-Each order must include at least one product.
-
-Adding an order reduces product stock automatically.
-
-Products cannot be deleted — only deactivated.
-
-Only active products appear in order dropdowns.
