@@ -24,7 +24,7 @@ function DataTable<T>({
   onRowClick,
 }: DataTableProps<T>) {
   return (
-    <div className="rounded-2xl bg-white shadow-sm dark:bg-slate-800 overflow-hidden overflow-x-auto">
+    <div className="rounded-2xl bg-white shadow-sm dark:bg-slate-800 overflow-hidden overflow-x-auto ">
       <table className="w-full min-w-[400px] border-collapse">
         <thead className="bg-slate-50 text-blue-900 font-medium dark:bg-slate-900/40 dark:text-slate-300">
           <tr>
@@ -66,12 +66,13 @@ function DataTable<T>({
                 className="hover:bg-slate-50 dark:hover:bg-slate-700/40 dark:text-slate-300"
                 onClick={() => onRowClick?.(row)}
               >
-                <td className="text-center ">
+                <td className="text-center  ">
                   <input
                     type="checkbox"
                     checked={selected.has(rowKey(row))}
                     onChange={() => toggleOne(rowKey(row))}
                     onClick={(e) => e.stopPropagation()}
+                    className="mx-2 "
                   />
                 </td>
 

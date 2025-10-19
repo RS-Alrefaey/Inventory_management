@@ -38,9 +38,12 @@ const Toolbar: React.FC<ToolbarProps> = ({
           type="button"
           disabled={disableDelete}
           onClick={onDelete}
-          className="hover:cursor-pointer rounded-3xl bg-slate-100 dark:bg-slate-700 px-6 py-2 font-semibold text-blue-900 dark:text-slate-200 disabled:opacity-40"
+          className="hover:cursor-pointer rounded-3xl bg-slate-100 dark:bg-slate-700 px-4 md:px-6 py-2 font-semibold text-blue-900 dark:text-slate-200 disabled:opacity-40"
         >
-          {title==="Products"? "deactivate" : "Delete"}
+          <span className="hidden sm:inline">
+            {title === "Products" ? "Deactivate" : "Delete"}
+          </span>
+          <span className="sm:hidden">-</span>
         </button>
       </div>
     </div>

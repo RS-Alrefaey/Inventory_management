@@ -8,7 +8,7 @@ const Button = ({ text, action }: ButtonProps) => {
     <>
       <button
         onClick={action}
-        className="hover:cursor-pointer rounded-3xl bg-blue-900 dark:bg-purple-400 px-6 py-2 font-semibold text-white"
+        className="hover:cursor-pointer rounded-3xl bg-blue-900 dark:bg-purple-400 px-4 md:px-6 py-2 font-semibold text-white"
       >
         {text}
       </button>
